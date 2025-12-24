@@ -1,0 +1,79 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f0c1d, #1d1833);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  border-radius: 0 18px 18px 0;
+}
+
+.logo {
+  width: 64px;
+  margin-bottom: 0.75rem;
+}
+
+.header h2 {
+  margin: 0 0 2rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.header_nav {
+  width: 100%;
+  flex-grow: 1;
+}
+
+.header_ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.header_ul li a {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  width: 100%;
+  border-radius: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.15s ease;
+  gap: 12px;
+}
+
+.header_ul li a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(4px);
+}
+
+.header_ul li a:active {
+  background: linear-gradient(90deg, #ff4f7b, #ff8a5b);
+  transform: scale(1.03);
+  color: white;
+}
+
+.header::after {
+  content: "Create Post";
+  margin-top: auto;
+  margin-bottom: 1rem;
+  width: 90%;
+  text-align: center;
+  padding: 14px 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff4f7b, #ff8a5b);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+

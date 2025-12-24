@@ -1,0 +1,87 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id            String   @id @default(uuid())
+
+  username      String   @unique
+  email         String   @unique
+  passwordHash  String
+  name          String?
+  bio           String?
+  avatarUrl     String?
+  createdAt     DateTime @default(now())
+
+  followers     Followers[] @relation("UserFollowers")
+  following     Followers[] @relation("UserFollowing")
+  recipes       RecipePost[]
+  likes         Like[]
+  comments      Comment[]
+}
+
+model Followers {
+  id         String   @id @default(uuid())
+
+  followerId String
+  followingId String
+
+  follower     User    @relation("UserFollowers", fields: [followerId], references: [id])
+  following     User    @relation("UserFollowing", fields: [followingId], references: [id])
+
+  createdAt  DateTime @default(now())
+
+  @@unique([followerId, followingId])
+}
+
+model RecipePost {
+  id          String   @id @default(uuid())
+
+  title       String
+  description String?
+  source     String?
+  rating     Int?
+  imageUrls   String[]
+  createdAt   DateTime @default(now())
+
+  authorId    String
+  author      User     @relation(fields: [authorId], references: [id])
+
+  likes       Like[]
+  comments    Comment[]
+}
+
+model Like {
+  id          String   @id @default(uuid())
+  userId      String
+  recipePostId String
+  createdAt   DateTime @default(now())
+
+  user        User      @relation(fields: [userId], references: [id])
+  recipePost  RecipePost @relation(fields: [recipePostId], references: [id])
+
+  @@unique([userId, recipePostId])
+}
+
+model Comment {
+  id          String   @id @default(uuid())
+  content     String
+  createdAt   DateTime @default(now())
+
+  authorId    String
+  recipePostId String
+
+  author      User      @relation(fields: [authorId], references: [id])
+  recipePost  RecipePost @relation(fields: [recipePostId], references: [id])
+}
