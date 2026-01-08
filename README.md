@@ -43,12 +43,12 @@ This project is currently an **MVP** and is under active development.
 ---
 
 ## Screenshots
-<img width="826" height="728" alt="image" src="https://github.com/user-attachments/assets/faeb92aa-8d1c-46c1-8e8b-109e1f8e187e" />
-<img width="790" height="793" alt="image" src="https://github.com/user-attachments/assets/0a706e3f-cbc2-4a66-bffe-18e3ae49e96f" />
-<img width="1876" height="897" alt="image" src="https://github.com/user-attachments/assets/88f72b1f-316a-40e6-b4de-45a42949ea13" />
+<img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/faeb92aa-8d1c-46c1-8e8b-109e1f8e187e" />
+<img width="400" height="403" alt="image" src="https://github.com/user-attachments/assets/0a706e3f-cbc2-4a66-bffe-18e3ae49e96f" />
+<img width="1000" height="600" alt="image" src="https://github.com/user-attachments/assets/88f72b1f-316a-40e6-b4de-45a42949ea13" />
 <img width="432" height="903" alt="image" src="https://github.com/user-attachments/assets/1601fbbf-6405-4c59-ae57-0bbd60b3b3b3" />
-<img width="1469" height="717" alt="image" src="https://github.com/user-attachments/assets/ae894513-5df6-4315-8bba-5e723dc9426c" />
-<img width="1439" height="801" alt="image" src="https://github.com/user-attachments/assets/abf026f0-51d5-4422-a58f-adbd065993eb" />
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/ae894513-5df6-4315-8bba-5e723dc9426c" />
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/abf026f0-51d5-4422-a58f-adbd065993eb" />
 
 
 ---
