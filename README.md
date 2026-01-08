@@ -25,19 +25,18 @@ This project is currently an **MVP** and is under active development.
 
 ## Tech Stack
 
-### Frontend
-- React (Next.js)
-- CSS Modules
-- Fetch API
-
 ### Backend
 - Node.js
 - Express
 - Prisma ORM
 - PostgreSQL
 
+### Frontend
+- React
+- Next.js
+
 ### Other
-- JWT-based authentication (cookies)
+- JWT-based authentication 
 - Multer for image uploads
 
 ---
