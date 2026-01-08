@@ -15,35 +15,33 @@ datasource db {
 }
 
 model User {
-  id            String   @id @default(uuid())
+  id        String   @id @default(uuid())
+  username  String   @unique
+  email     String   @unique
+  passwordHash String
+  name      String?
+  bio       String?
+  avatarUrl String?
+  createdAt DateTime @default(now())
 
-  username      String   @unique
-  email         String   @unique
-  passwordHash  String
-  name          String?
-  bio           String?
-  avatarUrl     String?
-  createdAt     DateTime @default(now())
+  followers Follow[] @relation("Followers")
+  following Follow[] @relation("Following")
 
-  followers     Followers[] @relation("UserFollowers")
-  following     Followers[] @relation("UserFollowing")
-  recipes       RecipePost[]
-  likes         Like[]
-  comments      Comment[]
+  recipes   RecipePost[]
+  likes     Like[]
+  comments  Comment[]
 }
 
-model Followers {
-  id         String   @id @default(uuid())
-
-  followerId String
+model Follow {
+  followerId  String
   followingId String
 
-  follower     User    @relation("UserFollowers", fields: [followerId], references: [id])
-  following     User    @relation("UserFollowing", fields: [followingId], references: [id])
+  follower   User @relation("Following", fields: [followerId], references: [id])
+  following  User @relation("Followers", fields: [followingId], references: [id])
 
-  createdAt  DateTime @default(now())
+  createdAt DateTime @default(now())
 
-  @@unique([followerId, followingId])
+  @@id([followerId, followingId])
 }
 
 model RecipePost {

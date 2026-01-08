@@ -1,8 +1,29 @@
-export default function Home() {
+"use client";
+
+import Feed from "./components/feed";
+import { useAuth } from "@/app/context/AuthContext";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
+export default function FeedPage() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!loading && !user) {
+      router.replace("/login");
+    }
+  }, [user, loading, router]);
+
+  if (loading) return null;
+  if (!user) return null;
+
   return (
-    <main>
-      <h1>Welcome to RecipeLoop 🍴</h1>
-      <p>Track, rate, and share your favorite recipes!</p>
-    </main>
+    <div className="home-layout">
+      <main className="home-feed">
+        <Feed />
+      </main>
+    </div>
   );
 }
+

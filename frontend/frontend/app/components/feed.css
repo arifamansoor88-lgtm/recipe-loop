@@ -1,0 +1,117 @@
+.feed-layout {
+  display: grid;
+  grid-template-columns: 1fr 550px 320px;
+  margin-left: -100px;
+  gap: 32px;
+  background: #faf7f2;
+}
+
+.feed-center {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.feed-sidebar {
+  position: sticky;
+  align-self: flex-start;
+}
+
+.feed-card {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  margin-left: -20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.feed-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.feed-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.feed-title {
+  margin: 12px 0 14px;
+  font-size: 18px;
+}
+
+.feed-image {
+  width: 100%;
+  max-height: 390px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 12px;
+}
+
+.feed-source {
+  display: block;
+  margin-bottom: 10px;
+  color: #ff5a5f;
+  font-weight: 500;
+  text-align: right;
+}
+
+.feed-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.like-btn {
+  color: #ff5a5f;
+  cursor: pointer;
+}
+
+.rating {
+  font-weight: 600;
+}
+
+.feed-empty {
+  text-align: center;
+  padding: 60px;
+}
+
+.suggested-box {
+  background: white;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.suggested-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.suggested-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.suggested-left img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.follow-plus {
+  border: none;
+  background: #ff5a5f;
+  color: white;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
